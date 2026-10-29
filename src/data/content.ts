@@ -273,3 +273,51 @@ export const rcParallels = [
   ["Session notes", "Call notes"],
   ["Team analytics", "Recruiter activity and pipeline reporting"],
 ];
+
+export type VideoItem = {
+  src: string;
+  poster: string;
+  title: string;
+  blurb: string;
+  portrait?: boolean;
+  chapters: [number, string][]; // [start second, label]
+};
+
+// Chapter times come from scene changes in MelloMinds' own promo videos.
+export const videos: VideoItem[] = [
+  {
+    src: "/videos/product-overview.mp4",
+    poster: "/videos/product-overview.jpg",
+    title: "Product overview (30s)",
+    blurb: "From Sunday-night admin to one workspace: booking link, payments, session notes, clinic dashboard and integrations.",
+    chapters: [
+      [0, "Sunday-night admin"],
+      [4, "Meet Mello"],
+      [7, "Bookings"],
+      [10, "Payments"],
+      [13, "Session notes"],
+      [16, "Clinic dashboard"],
+      [19, "Integrations"],
+      [22, "Four principles"],
+      [27, "Get started free"],
+    ],
+  },
+  {
+    src: "/videos/whatsapp-reminders.mp4",
+    poster: "/videos/whatsapp-reminders.jpg",
+    title: "WhatsApp reminders (30s)",
+    blurb: "How booking confirmations, reminders, forms and homework nudges reach clients on WhatsApp.",
+    portrait: true,
+    chapters: [
+      [0, "6 PM session"],
+      [5, "Speaks WhatsApp"],
+      [8, "Bookings confirmed"],
+      [11, "Reminders"],
+      [14, "Forms"],
+      [17, "Homework nudges"],
+      [20, "Stay in the loop"],
+      [22, "No setup needed"],
+      [24, "Pay for what you use"],
+    ],
+  },
+];

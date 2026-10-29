@@ -1,6 +1,7 @@
 import Image from "next/image";
+import ChapterVideo from "@/components/ChapterVideo";
 import RoiCalc from "@/components/RoiCalc";
-import { demoFlow, discovery, objections } from "@/data/content";
+import { demoFlow, discovery, objections, videos } from "@/data/content";
 
 export const metadata = { title: "Product Demo & Case Study · MelloMinds Sales Lab" };
 
@@ -20,6 +21,18 @@ export default function Demo() {
           Bookings, payments and session notes in one place, not five apps and a notebook. It gives you a few hours
           back, and the clinical call always stays with you.
         </p>
+      </section>
+
+      <section>
+        <h2 className="mb-1 text-2xl font-semibold">See it in motion</h2>
+        <p className="mb-4 text-sm text-muted">
+          MelloMinds&apos; own promo videos. Click a chapter to jump to that part; I use these to warm up a prospect before the call.
+        </p>
+        <div className="grid items-start gap-5 lg:grid-cols-[1.6fr_1fr]">
+          {videos.map((v) => (
+            <ChapterVideo key={v.src} v={v} />
+          ))}
+        </div>
       </section>
 
       <section>

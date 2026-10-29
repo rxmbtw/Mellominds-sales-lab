@@ -1,4 +1,4 @@
-import Image from "next/image";
+import ZoomImage from "@/components/ZoomImage";
 import ChapterVideo from "@/components/ChapterVideo";
 import RoiCalc from "@/components/RoiCalc";
 import { demoFlow, discovery, objections, videos } from "@/data/content";
@@ -57,13 +57,7 @@ export default function Demo() {
                 <h3 className="text-lg font-semibold">{s.title}</h3>
                 <p className="mt-1 text-sm text-muted">{s.say}</p>
               </div>
-              <Image
-                src={`/images/app/${s.img}.png`}
-                alt={`MelloMinds ${s.img} screen`}
-                width={1200}
-                height={580}
-                className="h-auto w-full rounded-xl border border-line"
-              />
+              <ZoomImage src={`/images/app/${s.img}.png`} alt={`MelloMinds ${s.img} screen`} />
             </li>
           ))}
         </ol>
